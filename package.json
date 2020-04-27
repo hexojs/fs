@@ -2,10 +2,11 @@
   "name": "hexo-fs",
   "version": "3.0.1",
   "description": "File system module for Hexo.",
-  "main": "lib/fs.js",
+  "main": "dist/fs.js",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "eslint": "eslint .",
-    "test": "mocha test/index.js",
+    "test": "mocha -r ts-node/register test/index.js",
     "test-cov": "nyc npm run test"
   },
   "directories": {
@@ -34,13 +35,24 @@
     "hexo-util": "^2.0.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.30",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^6.0.1",
+    "eslint": "^6.8.0",
     "eslint-config-hexo": "^4.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "iferr": "^1.0.2",
     "mocha": "^7.0.0",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=10.13.0"
